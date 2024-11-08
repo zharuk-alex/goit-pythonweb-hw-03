@@ -5,6 +5,7 @@ import pathlib
 class DataStorage:
     def __init__(self, file_path="storage/data.json"):
         self.file_path = pathlib.Path(file_path)
+        self.file_path.parent.mkdir(parents=True, exist_ok=True)
 
     def read_data(self):
         if self.file_path.exists():
