@@ -53,16 +53,14 @@ class HttpHandler(BaseHTTPRequestHandler):
             if pathlib.Path().joinpath(pr_url.path[1:]).exists():
                 self.send_static()
             else:
-                self.send_html_file("templates/error.html", 404)
+                self.render_template("templates/error.html", None, 404)
 
     def render_template(self, template_name, context=None, status=200):
         if context is None:
             context = {}
+
         template = self.env.get_template(template_name)
         html_content = template.render(**context)
-        self.send_html_template(html_content, status)
-
-    def send_html_template(self, html_content, status=200):
         self.send_response(status)
         self.send_header("Content-type", "text/html")
         self.end_headers()

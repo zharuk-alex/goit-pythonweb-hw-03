@@ -14,6 +14,9 @@ RUN poetry config virtualenvs.create false && poetry install --no-interaction --
 
 COPY . /app
 
+ENV PYTHONPATH="/app"
+
 EXPOSE 3000
 
-CMD ["python", "app/main.py"]
+# CMD ["python", "app/main.py"]
+CMD ["python", "-m", "app.main"]

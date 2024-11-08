@@ -1,0 +1,9 @@
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+storage/data.json
+.env
+.git
+.gitignore
