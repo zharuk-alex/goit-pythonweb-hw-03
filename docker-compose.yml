@@ -8,7 +8,11 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./storage:/app/storage 
+      - data:/app/storage
     environment:
       - POETRY_VIRTUALENVS_CREATE=false
     command: ["python", "app/main.py"]
+
+volumes:
+  data:
+    driver: local
