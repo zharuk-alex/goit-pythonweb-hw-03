@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "fullstack-web-development-hw3"
+version = "0.1.0"
+description = "hw3"
+authors = ["zharuk.alex <zzharuk@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jinja2 = "^3.1.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

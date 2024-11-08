@@ -1,0 +1,19 @@
+{% extends "/templates/base.html" %}
+{% block title %}All Messages{% endblock %}
+{% block content %}
+<div class="container mt-3">
+  <main class="m-auto">
+    <ol class="list-group">
+      {% for timestamp, entry in messages.items() %}
+      <li class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ entry.username }}</h5>
+          <small>{{ timestamp | format_timestamp}}</small>
+        </div>
+        <p class="mb-1">{{ entry.message }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </main>
+</div>
+{% endblock %}
